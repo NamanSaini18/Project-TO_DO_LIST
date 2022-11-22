@@ -41,11 +41,11 @@ h2 {
   border-radius: 5px;
   background: #b1b1c5;
   margin: 15px 0;
-  /* cursor: pointer; */
+  
 }
 
 .todo-list-div {
-  /* margin-left: auto; */
+ 
   float: left;
   width: 100%;
 
