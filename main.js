@@ -21,7 +21,7 @@ var createNewTask = function (task) {
   return listItem;
 };
 
-var addTask = function () {
+var add = function () {
   console.log("Adding task...");
 
   var listItem = createNewTask(newTask.value);
@@ -30,23 +30,7 @@ var addTask = function () {
 
   newTask.value = "";
 
-  bindIncompleteItems(listItem, completeTask);
-};
-
-var completeTask = function () {
-  var listItem = this.parentNode;
-
-  var deleteBtn = document.createElement("button");
-  deleteBtn.innerText = "Remove";
-  deleteBtn.className = "delete";
-  listItem.appendChild(deleteBtn);
-
-  var checkBox = listItem.querySelector("input[type=checkbox]");
-  checkBox.remove();
-
-  completeUl.appendChild(listItem);
-
-  bindCompleteItems(listItem, deleteTask);
+  bindIncompleteItems(listItem, complete);
 };
 
 var deleteTask = function () {
@@ -57,6 +41,9 @@ var deleteTask = function () {
 
   ul.removeChild(listItem);
 };
+
+
+
 
 var bindIncompleteItems = function (taskItem, checkBoxClick) {
   console.log("Binding the incomplete list...");
@@ -74,12 +61,28 @@ var bindCompleteItems = function (taskItem, deleteButtonPress) {
   deleteButton.onclick = deleteButtonPress;
 };
 
+var complete = function () {
+  var listItem = this.parentNode;
+
+  var deleteBtn = document.createElement("button");
+  deleteBtn.innerText = "Remove";
+  deleteBtn.className = "delete";
+  listItem.appendChild(deleteBtn);
+
+  var checkBox = listItem.querySelector("input[type=checkbox]");
+  checkBox.remove();
+
+  completeUl.appendChild(listItem);
+
+  bindCompleteItems(listItem, deleteTask);
+};
+
 for (var i = 0; i < toDoUl.children.length; i++) {
-  bindIncompleteItems(toDoUl.children[i], completeTask);
+  bindIncompleteItems(toDoUl.children[i], complete);
 }
 
 for (var i = 0; i < completeUl.children.length; i++) {
   bindCompleteItems(completeUl.children[i], deleteTask);
 }
 
-addTaskBtn.addEventListener("click", addTask);
+addTaskBtn.addEventListener("click", add);
