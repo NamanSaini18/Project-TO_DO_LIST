@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+.app-container {
+  background: darkcyan;
+  padding: 25px;
+  max-width: 780px;
+  margin: 25px auto;
+  overflow: hidden;
+  border-radius: 15px;
+  border: 4px solid #01014a;
+  font-family: "Nunito", sans-serif;
+}
+button {
+  font-family: "caveat",cursive;
+}
+h1,h2 {
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 22px;
+  text-align: center;
+  border-bottom: 1px solid #b1c9bb;
+  padding: 0 0 10px;
+  color: #01014a;
+}
+
+.new-task-div {
+  text-align: center;
+  padding: 2rem;
+}
+
+.box {
+  padding: 10px 15px;
+  border: 2px solid #e9e9e9;
+  border-radius: 5px;
+  background: #b1b1c5;
+  margin: 15px 0;
+  /* cursor: pointer; */
+}
+
+.todo-list-div {
+  /* margin-left: auto; */
+  float: left;
+  width: 100%;
+
+}
+
+.complete-list {
+  float: right;
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+  padding: 5px;
+  margin: 0;
+    cursor: pointer;
+}
+
+li{
+  padding: 10px;
+  border-bottom: 1px dotted #b1b1c5;
+  cursor: pointer;
+}
+
+.delete {
+  float: right;
+
+}
